@@ -15,10 +15,11 @@ import com.shprobotics.pestocore.drivebases.ThreeWheelOdometryTracker;
 @Config
 public class PestoFTCConfig {
     public static double ODOMETRY_TICKS_PER_INCH = 336.877962878;
-    public static double FORWARD_OFFSET = -9;
-    public static double ODOMETRY_WIDTH = 8.125;
+    public static double FORWARD_OFFSET = -6.75; //-9
+    public static double ODOMETRY_WIDTH = 7.25; //8.125
     public static double DECELERATION = -73.8807308633;
-    public static double MAX_VELOCITY = 39;
+    //public static double MAX_VELOCITY = 39;
+    public static double MAX_VELOCITY = 19;
 
     public static final DcMotorSimple.Direction leftEncoderDirection = FORWARD;
     public static final DcMotorSimple.Direction centerEncoderDirection = FORWARD;
@@ -37,10 +38,10 @@ public class PestoFTCConfig {
         });
 
         mecanumController.configureMotorDirections(new DcMotorSimple.Direction[]{
-                DcMotorSimple.Direction.REVERSE,
-                DcMotorSimple.Direction.FORWARD,
-                DcMotorSimple.Direction.REVERSE,
-                DcMotorSimple.Direction.FORWARD
+                DcMotorSimple.Direction.REVERSE, //reverse
+                DcMotorSimple.Direction.FORWARD, //forward
+                DcMotorSimple.Direction.REVERSE, //reverse
+                DcMotorSimple.Direction.FORWARD, //forward
         });
 
 //        mecanumController.setPowerVectors(new Vector2D[]{
@@ -59,10 +60,10 @@ public class PestoFTCConfig {
     public static TeleOpController getTeleOpController(MecanumController mecanumController, ThreeWheelOdometryTracker tracker, HardwareMap hardwareMap) {
         TeleOpController teleOpController = new TeleOpController(mecanumController, hardwareMap);
 
-//        teleOpController.configureIMU(
-//                RevHubOrientationOnRobot.LogoFacingDirection.UP,
-//                RevHubOrientationOnRobot.UsbFacingDirection.BACKWARD
-//        );
+        //teleOpController.configureIMU(
+          //      RevHubOrientationOnRobot.LogoFacingDirection.FORWARD,
+          //      RevHubOrientationOnRobot.UsbFacingDirection.RIGHT
+       // );
 
         teleOpController.useTrackerIMU(tracker);
 

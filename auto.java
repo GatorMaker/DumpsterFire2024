@@ -21,24 +21,25 @@ public class auto extends LinearOpMode {
         PathContainer pathContainer = new PathContainer.PathContainerBuilder()
                 .addCurve(new BezierCurve(new Vector2D[]{
                         new Vector2D(0, 0),
-                        new Vector2D(0, 100)
+                        new Vector2D(0, 25)
                 }),
                         new ParametricHeading(0, -Math.PI / 2)
                 )
 
-                .addCurve(new BezierCurve(new Vector2D[]{
+                /*.addCurve(new BezierCurve(new Vector2D[]{
                                 new Vector2D(0, 100),
                                 new Vector2D(100, 100)
                         }),
                         new ParametricHeading(-Math.PI / 2, -Math.PI / 2)
-                )
+                )*/
                 .build();
 
 
 
         PathFollower pathFollower = new PathFollower.PathFollowerBuilder(mecanumController, threeWheelOdometryTracker, pathContainer)
                 .setDeceleration(PestoFTCConfig.DECELERATION)
-                .setHeadingPID(new PID(0.1, 0, 0))
+         //       .setHeadingPID(new PID(0.1, 0, 0))
+                .setHeadingPID(new PID(0.005, 0, 0))
                 .setEndpointPID(new PID(0,  0, 0))
                 .build();
 
