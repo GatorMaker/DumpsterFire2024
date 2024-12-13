@@ -145,14 +145,12 @@ public class test extends LinearOpMode {
 >>>>>>> Stashed changes
 
 
-            telemetry.addData("x", currentPosition.getX());
-            telemetry.addData("y", currentPosition.getY());
-            telemetry.addData("rotation", heading);
-            telemetry.addData("wormGear", wormGearMotor.getCurrentPosition());
-            telemetry.addData("strongArm", strongArmMotor.getCurrentPosition());
-            telemetry.addData("viperSlide",viperslide.getCurrentPosition());
+            telemetry.addData("Drivetrain", currentPosition.getX(), getY());
+            telemetry.addData("Rotation", heading);
+            telemetry.addData("WormGear", wormGearMotor.getCurrentPosition());
+            telemetry.addData("StrongArm", strongArmMotor.getCurrentPosition());
+            telemetry.addData("ViperSlide",viperslide.getCurrentPosition());
             telemetry.update();
-
 
             if (gamepad1.b) {
                 threeWheelOdometryTracker.reset();
