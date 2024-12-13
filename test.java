@@ -58,6 +58,7 @@ public class test extends LinearOpMode {
             teleOpController.updateSpeed(gamepad1, gamepad2);
 
             teleOpController.driveRobotCentric(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+<<<<<<< Updated upstream
 
             //WormGear Code
             if (gamepad1.right_trigger>0.2){
@@ -140,6 +141,8 @@ public class test extends LinearOpMode {
             if (gamepad1.y){
                 claw.setPosition(1.0);
             }
+=======
+>>>>>>> Stashed changes
 
 
             telemetry.addData("x", currentPosition.getX());
