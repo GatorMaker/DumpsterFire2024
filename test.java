@@ -71,17 +71,17 @@ public class test extends LinearOpMode {
             }
 
             //Move Worm Gear To Position
-            //if (gamepad1.right_trigger){
-            //    wormGearMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            //    wormGearMotor.setTargetPosition(-1850);
-            //    wormGearMotor.setPower(1.0);
+            if (gamepad1.right_trigger){
+                wormGearMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                wormGearMotor.setTargetPosition(-1850);
+                wormGearMotor.setPower(1.0);
 
-            //    while (viperslide.isBusy()){
-                    //Wait for motor to reach target position
-            //    }
-            //    wormGearMotor.setPower(0.0);
-            //    wormGearMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-            //}
+                while (viperslide.isBusy()){
+                    Wait for motor to reach target position
+                }
+                wormGearMotor.setPower(0.0);
+                wormGearMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            }
 
             // Strong Arm Code
             if (gamepad2.right_stick_y>0.2){
@@ -91,6 +91,8 @@ public class test extends LinearOpMode {
             }
             else {
                 strongArmMotor.setPower(0.0);
+//                stongArmMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION)
+//                strongArmMotor.setTargetPosition(InsertHere...)
             }
 
             //Viper Slide Code
