@@ -57,7 +57,7 @@ public class test extends LinearOpMode {
 
             teleOpController.updateSpeed(gamepad1, gamepad2);
 
-            teleOpController.driveRobotCentric(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+            teleOpController.driveFieldCentric(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 <<<<<<< Updated upstream
 
             //WormGear Code
@@ -149,12 +149,13 @@ public class test extends LinearOpMode {
             telemetry.addData("Rotation", heading);
             telemetry.addData("WormGear", wormGearMotor.getCurrentPosition());
             telemetry.addData("StrongArm", strongArmMotor.getCurrentPosition());
-            telemetry.addData("ViperSlide",viperslide.getCurrentPosition());
+            telemetry.addData("ViperSlide", viperslide.getCurrentPosition());
+            telemetry.addData("IMU", IMU.getCurrentPosition)
             telemetry.update();
 
             if (gamepad1.b) {
                 threeWheelOdometryTracker.reset();
-                teleOpController.resetIMU();
+//                teleOpController.resetIMU();
             }
 
         }
