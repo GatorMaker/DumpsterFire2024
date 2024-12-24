@@ -8,13 +8,19 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.Servo;
+// import com.qualcomm.robotcore.hardware.Servo;
+//Why do we need two of these?
 
 @Autonomous(name = "AutoCompRed1", group = "Autonomous") public class AutoCompRed1 extends LinearOpMode {
     private DcMotor frontLeft;
     private DcMotor frontRight;
     private DcMotor backLeft;
     private DcMotor backRight;
+    private DcMotor wormGearMotor;
+    private DcMotor strongArmMotor;
+    private DcMotor viperslide;
+    private Servo claw;
+
 
     @Override
     public void runOpMode() {
@@ -27,6 +33,7 @@ import com.qualcomm.robotcore.hardware.Servo;
         frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
         backLeft.setDirection(DcMotorSimple.Direction.REVERSE);
         backRight.setDirection(DcMotorSimple.Direction.FORWARD);
+        //ALL SPIN FORWARD (Technically)
 
         waitForStart();
 
@@ -41,6 +48,13 @@ import com.qualcomm.robotcore.hardware.Servo;
         frontRight.setPower(0.0);
         backLeft.setPower(0.0);
         backRight.setPower(0.0);
+
+        frontLeft.setDirection(DcMotorSimple.Direction.FORWARD);
+        frontRight.setDirection(DcMotorSimple.Direction.FORWARD);
+        backLeft.setDirection(DcMotorSimple.Direction.FORWARD);
+        backRight.setDirection(DcMotorSimple.Direction.FORWARD);
+
+
     }
 
 }
